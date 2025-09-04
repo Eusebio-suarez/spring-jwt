@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
@@ -14,10 +15,11 @@ import lombok.NoArgsConstructor;
 
 
 @Data //getters y setters
-@Builder //patron builder
-@Entity // definir la clse como una entidad
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder //patron builder
+@Entity // definir la clse como una entidad
+@Table(name="users")
 public class UserEntity {
     
     @Id
