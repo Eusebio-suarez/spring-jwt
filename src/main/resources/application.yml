@@ -1,0 +1,15 @@
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/jwtDB
+    username: root
+    password: 
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create  # crea/actualiza tablas según tus entidades
+    show-sql: true       # muestra SQL en consola
+    properties:
+      hibernate:
+        format_sql: true
