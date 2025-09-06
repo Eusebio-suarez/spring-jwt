@@ -2,8 +2,6 @@ package com.example.SpringSecurirtyJWT.entity;
 
 import java.util.Set;
 
-import org.hibernate.annotations.ManyToAny;
-
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -21,8 +19,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-
 @Data //getters y setters
 @AllArgsConstructor
 @NoArgsConstructor
