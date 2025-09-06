@@ -4,6 +4,7 @@ import java.util.Set;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.Builder;
 import lombok.Data;
 
@@ -19,6 +20,7 @@ public class UserRequestDTO {
     @NotBlank
     private String password;
 
+    @NotNull(message="no se encontro la propiedad roles")
     private Set<String> roles;
 
 }

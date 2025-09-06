@@ -23,7 +23,7 @@ public class UserService {
         //roles que se van a 
         Set<RolEntity> roles;
         //verificar que almenos tenga un rol
-            //si no tine se le da el rol de usuario por defecto
+        //si no tine se le da el rol de usuario por defecto
         if(userRequest.getRoles()==null || userRequest.getRoles().isEmpty()){
             roles = Set.of(RolEntity.builder()
             .name(Erol.USER)
