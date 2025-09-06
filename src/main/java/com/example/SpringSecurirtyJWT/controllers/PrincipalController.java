@@ -42,17 +42,29 @@ public class PrincipalController {
     //endpoint para crear un usuario
     @PostMapping("/crear")
     public ResponseEntity<ApiResponse<?>>crearUsuario(@Valid @RequestBody UserRequestDTO userRequest ){
+        //roles que se van a 
+        Set<RolEntity> roles;
+      
         try {
+            //verificar que almenos tenga un rol
+            //si no tine se le da el rol de usuario por defecto
+            if(userRequest.getRoles()==null || userRequest.getRoles().isEmpty()){
+                roles = Set.of(RolEntity.builder()
+                .name(Erol.USER)
+                .build());
+            }
             // obtener los roles de la peticion
             // con el get roles se obtiene una coleccionde strings luego se mapean y se vueleven E rol entidad
-            Set<RolEntity> roles = userRequest.getRoles().stream()
+            else{
+            //si se obtubieron roles entonces se mapean a eolEntity
+            roles = userRequest.getRoles().stream()
             //mapear los roles del request para pasarlos a una entidad roles
                     .map(rol -> RolEntity.builder()
                         .name(Erol.valueOf(rol.toUpperCase()))
                         .build()
                     )
                     .collect(Collectors.toSet());
-                    
+            }      
         
             //contruir la entidad user en base a el user request
             UserEntity user = UserEntity.builder()
