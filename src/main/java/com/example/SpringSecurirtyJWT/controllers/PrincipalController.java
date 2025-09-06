@@ -86,7 +86,7 @@ public class PrincipalController {
             //responder con un codigo de estado creado y con la informacin adicional de la peticion
             return ResponseEntity.status(HttpStatus.CREATED).body(ApiResponse.builder()
                     .success(true)
-                    .message("usuario encontrado correctamente")
+                    .message("usuario creado correctamente")
                     .data(userResponse)
                     .build());
 
