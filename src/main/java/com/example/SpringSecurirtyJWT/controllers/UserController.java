@@ -19,6 +19,7 @@ import jakarta.validation.Valid;
 @RestController//definir la calse como un controllador
 @RequestMapping("/api/v1/users")
 public class UserController {
+    
     @Autowired
     private UserService userService;
     

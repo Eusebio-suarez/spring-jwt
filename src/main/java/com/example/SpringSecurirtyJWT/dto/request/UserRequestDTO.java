@@ -12,7 +12,7 @@ import lombok.Data;
 @Builder
 public class UserRequestDTO {
     @Email
-    @NotBlank
+    @NotBlank 
     private String email;
 
     @NotBlank
