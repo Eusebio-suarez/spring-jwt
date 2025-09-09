@@ -6,6 +6,7 @@ import java.util.Date;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.io.Decoders;
@@ -76,5 +77,16 @@ public class JwtUtils {
             //el token es invalido
             return false;
         }
+    }
+
+    //obtener todos los claims(payload-informacion) del token
+    public Claims extractAllClaims(String token){
+        return Jwts.parser()
+                .setSigningKey(getSignatureKey())
+                .build()
+                .parseSignedClaims(token)
+                //obtener el curepo/claims del token
+                .getBody();
+            
     }
 }
